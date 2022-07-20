@@ -9,7 +9,6 @@ import Post from './Post';
 const MainPage = () => {
       const news = useSelector(state => state.newsReducer.news);
       const dispatch = useDispatch();
-      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
       useEffect(() => {
             dispatch(fetchNews());
       }, [])
@@ -21,7 +20,7 @@ const MainPage = () => {
                         <Post title={post.title}
                               author={post.by}
                               score={post.score}
-                              date={new Date(post.time).toLocaleDateString("en-US")}
+                              date={new Date(post.time * 1000).toLocaleDateString("en-US")}
                               id={post.id} />)
       )
 }
