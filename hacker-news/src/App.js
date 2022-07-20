@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchNews } from "./store/newsReducer";
-
+import { BrowserRouter, Route } from 'react-router-dom';
+import AppRouter from "./components/AppRouter";
 
 
 
@@ -15,9 +16,10 @@ function App() {
 
   console.log(news);
   return (
-    <div className="App">
-
-    </div>
+    <BrowserRouter>
+      <AppRouter/>
+    </BrowserRouter>
+    
   );
 }
 
