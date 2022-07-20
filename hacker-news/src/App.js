@@ -1,10 +1,22 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchNews } from "./store/newsReducer";
 
-import './App.css';
+
+
 
 function App() {
+
+  const news = useSelector(state => state.newsReducer.news);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchNews());
+  }, [])
+
+  console.log(news);
   return (
     <div className="App">
-      
+
     </div>
   );
 }
