@@ -7,7 +7,7 @@ import Comments from '../components/Comments';
 
 const NewsPage = () => {
   const params = useParams();
-  const story = useSelector(state => state.useReducer.concretStory);
+  const story = useSelector(state => state.newsReducer.concretStory);
   const dispatch = useDispatch();
 
   useEffect(() => {
