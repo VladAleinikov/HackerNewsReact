@@ -1,0 +1,37 @@
+.themeSwitcher {
+      cursor: pointer;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background: transparent;
+      width: 24px;
+      height: 24px;
+      transition: 0.3s;
+
+      .light,
+      .dark {
+            transition: 0.3s;
+            color: #ff6700;
+            &:hover{
+                  transform: scale(1.2);
+            }
+      }
+      .light {
+            opacity: 0;
+      }
+
+      &.active {
+            transform: rotate(180deg);
+            .light {
+                  opacity: 1;
+            }
+            .dark {
+                  opacity: 0;
+            }
+      }
+}

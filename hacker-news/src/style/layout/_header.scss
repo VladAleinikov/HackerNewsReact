@@ -1,0 +1,16 @@
+.header {
+      cursor: pointer;
+      margin: auto;
+      margin-top: 40px;
+      width: fit-content;
+      padding: 0 30px;
+      text-align: center;
+      font-weight: lighter;
+      letter-spacing: 5px;
+      border-right: solid 4px #ff8636;
+      border-left: solid 4px #ff8636;
+      transition: .3s;
+      &:hover{
+            padding: 0 40px;
+      }
+}

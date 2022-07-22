@@ -1,5 +1,5 @@
-import MainPage from "../components/MainPage";
-import NewsPage from "../components/NewsPage";
+import MainPage from "../pages/MainPage";
+import NewsPage from "../pages/NewsPage";
 
 export const routes = [
       { path: '/', component: <MainPage/>, exact: true },

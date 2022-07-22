@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router'
 import { getStory } from '../store/newsReducer';
-import Comments from './Comments';
+import Comments from '../components/Comments';
 
 const NewsPage = () => {
   const params = useParams();

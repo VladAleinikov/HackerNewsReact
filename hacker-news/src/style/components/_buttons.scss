@@ -1,0 +1,30 @@
+.btn {
+      cursor: pointer;
+}
+
+.reload-btn {
+      width: 120px;
+      font-size: 24px;
+      font-weight: 700;
+      font-weight: 200;
+      text-align: center;
+      padding: 8px;
+      border: solid 2px #ff6700;
+      background: transparent;
+      border-radius: 10px;
+      letter-spacing: 1px;
+      transition: .3s;
+      span {
+            transition: 0.3s;
+            margin-right: 5px;
+            font-size: 20px;
+      }
+      &:hover {
+            letter-spacing: 2px;
+            border: solid 2px #ff8636;
+            background:  lighten(transparent,  40%);
+            span {
+                  transform: rotate(-250deg);
+            }
+      }
+}
