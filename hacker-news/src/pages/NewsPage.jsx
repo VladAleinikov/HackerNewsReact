@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router'
 import { getStory } from '../store/newsReducer';
-import Comments from '../components/Comments';
+import Comments from '../components/UI/Comments';
 
 const NewsPage = () => {
   const params = useParams();
@@ -21,7 +21,7 @@ const NewsPage = () => {
       <div className="author">By: {story.by}</div>
       <div className="comments">
         <p>Num of comments {story.descendants}</p>
-        <Comments comments={story.comments} />
+        <Comments commentLinks={story.kids} show={true} />
       </div>
     </div>
   )
