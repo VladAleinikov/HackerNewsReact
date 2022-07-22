@@ -4,6 +4,8 @@
   outline: none;
   color: #777;
   text-decoration: none;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 body {
@@ -167,7 +169,7 @@ body {
           align-items: center;
   background: transparent;
   width: 24px;
-  height: 24px;
+  height: 48px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -179,14 +181,12 @@ body {
   color: #ff6700;
 }
 
-.themeSwitcher .light:hover,
-.themeSwitcher .dark:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-}
-
 .themeSwitcher .light {
   opacity: 0;
+}
+
+.themeSwitcher .dark {
+  opacity: 1;
 }
 
 .themeSwitcher.active {
@@ -200,5 +200,13 @@ body {
 
 .themeSwitcher.active .dark {
   opacity: 0;
+}
+
+body.light {
+  background: #fff;
+}
+
+body.light * {
+  color: #000;
 }
 /*# sourceMappingURL=main.css.map */

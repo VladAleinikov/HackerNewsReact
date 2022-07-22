@@ -10,12 +10,12 @@ import './style/main.css'
 
 
 function App() {
-  const [theme, setTheme] = useState("dark")
+  let theme = "dark";
 
 
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme }}>
       <BrowserRouter>
         <ThemeSwitcher/>
         <Header/>
