@@ -23,7 +23,8 @@ const NewsPage = () => {
       <a className='storyLink' href={story.url}>Story link: <span className='link'>{story.url}</span></a>
       <div className="date">Creation date: {new Date(story.time * 1000).toLocaleDateString("en-US")}</div>
       <div className="author">By: {story.by}</div>
-      <div className="comments">
+      {story?.descendants === 0 ? <h2>No comments</h2> :
+        <div className="comments">
         <p>Num of comments {story.descendants}</p>
         <MyButton className='reload-btn reload-comments'>
           <span class="material-symbols-outlined">
@@ -32,7 +33,7 @@ const NewsPage = () => {
           Reload Comments
         </MyButton><br />
         {story.kids != undefined ? <Comments commentLinks={story.kids} show={true} isFirst={true} /> : ''}
-      </div>
+      </div>}
     </div>
   )
 }
