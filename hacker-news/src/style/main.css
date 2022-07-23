@@ -50,6 +50,40 @@ body {
   margin-left: calc(100% - 100px);
 }
 
+.StorySection {
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.StorySection h2 {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.StorySection .storyLink,
+.StorySection .date,
+.StorySection .author,
+.StorySection .comments {
+  margin-top: 10px;
+}
+
+.StorySection .storyLink p,
+.StorySection .date p,
+.StorySection .author p,
+.StorySection .comments p {
+  margin-bottom: 10px;
+}
+
+.StorySection .link {
+  border-bottom: 1px solid #ff8636;
+  padding: 0 0;
+}
+
+.StorySection .link:hover {
+  padding: 0 2px;
+}
+
 .btn {
   cursor: pointer;
 }
@@ -60,18 +94,20 @@ body {
   font-weight: 700;
   font-weight: 200;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 8px;
   border: solid 2px #ff6700;
   background: transparent;
   border-radius: 10px;
   letter-spacing: 1px;
-  -webkit-transition: .3s;
-  transition: .3s;
 }
 
 .reload-btn span {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
   margin-right: 5px;
   font-size: 20px;
 }
@@ -85,6 +121,15 @@ body {
 .reload-btn:hover span {
   -webkit-transform: rotate(-250deg);
           transform: rotate(-250deg);
+}
+
+.reload-btn.reload-comments {
+  width: 200px;
+  font-size: 16px;
+}
+
+.reload-btn.reload-comments span {
+  font-size: 16px;
 }
 
 .post {
@@ -202,9 +247,21 @@ body {
   opacity: 0;
 }
 
-.commentsSection {
+.commentsSection,
+.show-more {
   padding-left: 5px;
   border-left: 1px solid #ff8636;
+}
+
+.show-more,
+.show-less {
+  cursor: pointer;
+  color: #ff8636;
+}
+
+.show-more:hover,
+.show-less:hover {
+  padding-left: 10px;
 }
 
 body.light {

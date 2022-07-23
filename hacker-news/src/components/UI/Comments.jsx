@@ -2,8 +2,8 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-const Comments = ({ commentLinks, show, ...props }) => {
-  const  [comments, setComments] = useState([]);
+const Comments = ({ commentLinks, show, isFirst, ...props }) => {
+  const [comments, setComments] = useState([]);
   const [showComments, setShowComments] = useState(show);
   useEffect(() => {
     commentLinks.map(id => {
@@ -20,20 +20,22 @@ const Comments = ({ commentLinks, show, ...props }) => {
   return (
     showComments ?
       <div className='commentsSection'>
-        <span onClick={e => setShowComments(false)} className="material-symbols-outlined">
+        {isFirst ? "" :
+          <span onClick={e => setShowComments(false)} className="material-symbols-outlined show-less">
           expand_less
-        </span>
+        </span>}
+
         {
           comments.map(comment =>
             <div>
               <p>{comment.by}</p>
               <p>{comment.text}</p>
               {comment.kids != undefined ?
-                <Comments commentLinks={comment.kids} show={false} /> : ""}
+                <Comments commentLinks={comment.kids} show={false} isFirst={false} /> : ""}
             </div>)
         }
 
-      </div> : <span onClick={e => setShowComments(true)}  className="material-symbols-outlined">
+      </div> : <span onClick={e => setShowComments(true)} className="material-symbols-outlined show-more">
         expand_more
       </span>
   )

@@ -1,4 +1,14 @@
-.commentsSection{
+.commentsSection,
+.show-more{
       padding-left: 5px;
+
       border-left: 1px solid #ff8636;
+}
+.show-more,
+.show-less{
+      cursor: pointer;
+      color: #ff8636;
+      &:hover{
+            padding-left: 10px;
+      }
 }

@@ -1,0 +1,28 @@
+.StorySection {
+      width: 90%;
+      margin: auto;
+      margin-top: 40px;
+
+      h2 {
+            text-align: center;
+            padding-bottom: 20px;
+      }
+      .storyLink,
+      .date,
+      .author,
+      .comments {
+            margin-top: 10px;
+            p{
+                  margin-bottom: 10px;
+            }
+
+      }
+      .link {
+            border-bottom: 1px solid #ff8636;
+            padding: 0 0;
+
+            &:hover {
+                  padding: 0 2px;
+            }
+      }
+}
