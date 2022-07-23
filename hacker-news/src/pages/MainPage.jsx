@@ -2,7 +2,7 @@ import React from 'react'
 import Loading from '../components/UI/Loading';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchNews } from "../store/newsReducer";
+import { fetchNews } from "../redux/store/newsReducer";
 import Post from '../components/Post';
 import MyButton from '../components/UI/MyButton';
 

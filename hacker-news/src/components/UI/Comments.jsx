@@ -1,17 +1,28 @@
 import React from 'react'
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const Comments = ({ commentLinks, show, ...props }) => {
-  let comments = [];
-  commentLinks.map(id => {
-    fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`).
-      then(res => res.json()).
-      then(result => {
-        comments.push(result);
+  const  [comments, setComments] = useState([]);
+  const [showComments, setShowComments] = useState(show);
+  useEffect(() => {
+    commentLinks.map(id => {
+      fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`).
+        then(res => res.json()).
+        then(result => {
+          setComments([...comments, result]);
+        })
     })
-  })
+  }, [])
+
+
+
   return (
-    show ?
+    showComments ?
       <div className='commentsSection'>
+        <span onClick={e => setShowComments(false)} className="material-symbols-outlined">
+          expand_less
+        </span>
         {
           comments.map(comment =>
             <div>
@@ -21,11 +32,8 @@ const Comments = ({ commentLinks, show, ...props }) => {
                 <Comments commentLinks={comment.kids} show={false} /> : ""}
             </div>)
         }
-        <span class="material-symbols-outlined">
-          expand_less
-        </span>
-      </div> :
-      <span class="material-symbols-outlined">
+
+      </div> : <span onClick={e => setShowComments(true)}  className="material-symbols-outlined">
         expand_more
       </span>
   )

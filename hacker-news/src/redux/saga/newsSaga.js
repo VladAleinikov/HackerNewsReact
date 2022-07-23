@@ -8,9 +8,11 @@ function* fetchNewsWorker() {
       const maxNewsIdPromise = yield call(fetchMaxNewsId);
       const maxNewsId = yield call(() => new Promise(res => res(maxNewsIdPromise.json())))
       let json = [];
-      for (let i = maxNewsId; i > maxNewsId-100; i--) {
+      for (let i = maxNewsId; json.length !== 100; i--) {
             const news = yield call(() => fetch(`https://hacker-news.firebaseio.com/v0/item/${i}.json?print=pretty`));
             json.push(yield call(() => new Promise(res => res(news.json()))));
+            if (json[json.length - 1].type !== 'story')
+                  json.pop();
       }
       yield put(setNews(json));
 }
