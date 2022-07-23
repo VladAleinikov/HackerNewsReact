@@ -1,5 +1,5 @@
 const defaultState = {
-      news: [{
+      news: [/* {
             "by": "dhouston",
             "descendants": 71,
             "id": 8863,
@@ -9,7 +9,7 @@ const defaultState = {
             "title": "My YC app: Dropbox - Throw away your USB drive",
             "type": "story",
             "url": "http://www.getdropbox.com/u/2/screencast.html"
-      }],
+      } */],
       concretStory: {}
 }
 export const GET_STORY = "GET_STORY";
@@ -22,11 +22,11 @@ export default function newsReducer(state = defaultState, action) {
       // eslint-disable-next-line default-case
       switch (action.type) {
             case SET_NEWS:
-                  return {...state, news: state.news}
+                  return {...state, news: action.payload}
             case GET_STORY:
                   return { ...state, concretStory: state.news.filter(e => e.id == action.payload)[0] }
             case SET_STORY:
-                  return {...state, concretStory : state.concretStory}
+                  return {...state, concretStory : action.payload}
       }
       return state
 }

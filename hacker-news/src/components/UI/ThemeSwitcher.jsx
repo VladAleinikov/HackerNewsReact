@@ -12,10 +12,10 @@ const ThemeSwitcher = (e) => {
       }
   return (
         <div className="themeSwitcher" onClick={switchTheme}>
-              <span class="material-symbols-outlined dark">
+              <span className="material-symbols-outlined dark">
                     dark_mode
               </span>
-              <span class="material-symbols-outlined light">
+              <span className="material-symbols-outlined light">
                     light_mode
               </span>
       </div>

@@ -109,7 +109,13 @@ body {
 
 .reload-btn span {
   margin-right: 5px;
-  font-size: 20px;
+  font-size: 24px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .reload-btn:hover {
@@ -130,6 +136,17 @@ body {
 
 .reload-btn.reload-comments span {
   font-size: 16px;
+}
+
+svg path,
+svg rect {
+  fill: #FF6700;
+  -webkit-transition: none;
+  transition: none;
+}
+
+.loader {
+  margin-top: 20px;
 }
 
 .post {

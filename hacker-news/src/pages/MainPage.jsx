@@ -2,7 +2,7 @@ import React from 'react'
 import Loading from '../components/UI/Loading';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchNews } from "../redux/store/newsReducer";
+import { fetchNews, setNews } from "../redux/store/newsReducer";
 import Post from '../components/Post';
 import MyButton from '../components/UI/MyButton';
 
@@ -12,6 +12,9 @@ const MainPage = () => {
       const dispatch = useDispatch();
       useEffect(() => {
             dispatch(fetchNews());
+            setInterval(() => {
+                  dispatch(fetchNews());
+            }, 60000);
       }, [])
 
       return (
@@ -20,7 +23,10 @@ const MainPage = () => {
                         <Loading /> :
                         <div className="main">
 
-                              <MyButton className='reload-btn'>
+                              <MyButton onClick={(e) => {
+                                    dispatch(setNews({}));
+                                    dispatch(fetchNews())
+                              }} className='reload-btn'>
                                     <span class="material-symbols-outlined">
                                           settings_backup_restore
                                     </span>
