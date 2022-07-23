@@ -17,13 +17,17 @@ const NewsPage = () => {
     //dispatch(fetchComments(story));
 
   }, [story])
+  console.log(story);
   return (
+    story === undefined ?
+      <div className='StorySection'><h2>No such story</h2></div>
+      :
     <div className='StorySection'>
       <h2>{story.title}</h2>
       <a className='storyLink' href={story.url}>Story link: <span className='link'>{story.url}</span></a>
       <div className="date">Creation date: {new Date(story.time * 1000).toLocaleDateString("en-US")}</div>
       <div className="author">By: {story.by}</div>
-      {story?.descendants === 0 ? <h2>No comments</h2> :
+      {story.descendants === 0 ? <h2>No comments</h2> :
         <div className="comments">
         <p>Num of comments {story.descendants}</p>
         <MyButton className='reload-btn reload-comments'>
