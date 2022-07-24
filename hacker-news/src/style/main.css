@@ -149,6 +149,82 @@ svg rect {
   margin-top: 20px;
 }
 
+.themeSwitcher {
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: transparent;
+  width: 24px;
+  height: 48px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.themeSwitcher .light,
+.themeSwitcher .dark {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #ff6700;
+}
+
+.themeSwitcher .light {
+  opacity: 0;
+}
+
+.themeSwitcher .dark {
+  opacity: 1;
+}
+
+.themeSwitcher.active {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.themeSwitcher.active .light {
+  opacity: 1;
+}
+
+.themeSwitcher.active .dark {
+  opacity: 0;
+}
+
+.error {
+  margin-top: 40px;
+}
+
+.error h2,
+.error h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.error h2 a,
+.error h3 a {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  border-bottom: 1px solid #ff8636;
+}
+
+.error h2 a:hover,
+.error h3 a:hover {
+  width: 110px;
+}
+
 .post {
   position: relative;
   width: 80%;
@@ -209,59 +285,6 @@ svg rect {
 
 .header:hover {
   padding: 0 40px;
-}
-
-.themeSwitcher {
-  cursor: pointer;
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: transparent;
-  width: 24px;
-  height: 48px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.themeSwitcher .light,
-.themeSwitcher .dark {
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-  color: #ff6700;
-}
-
-.themeSwitcher .light {
-  opacity: 0;
-}
-
-.themeSwitcher .dark {
-  opacity: 1;
-}
-
-.themeSwitcher.active {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
-.themeSwitcher.active .light {
-  opacity: 1;
-}
-
-.themeSwitcher.active .dark {
-  opacity: 0;
 }
 
 .commentsSection,

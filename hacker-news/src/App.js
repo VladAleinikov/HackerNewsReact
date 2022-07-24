@@ -7,7 +7,8 @@ import Header from './components/UI/Header';
 import ThemeSwitcher from './components/UI/ThemeSwitcher';
 import { ThemeContext } from './context';
 import './style/main.css'
-
+import { ErrorBoundary } from 'react-error-boundary';
+import ErrorFallback from './components/ErrorFallback';
 
 function App() {
   let theme = "dark";
@@ -17,9 +18,12 @@ function App() {
   return (
     <ThemeContext.Provider value={{ theme }}>
       <BrowserRouter>
-        <ThemeSwitcher/>
-        <Header/>
-        <AppRouter />
+        <ThemeSwitcher />
+        <Header />
+        <ErrorBoundary
+          FallbackComponent={ErrorFallback}>
+          <AppRouter />
+        </ErrorBoundary>
       </BrowserRouter>
     </ThemeContext.Provider>
   );
