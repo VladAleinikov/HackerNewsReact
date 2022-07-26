@@ -2,11 +2,11 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
-const Comments = ({ commentLinks, show, isFirst, ...props }) => {
+const Comments = ({ comments, show, isFirst, ...props }) => {
 
-  const [comments, setComments] = useState([]);
+/*   const [comments, setComments] = useState([]); */
   const [showComments, setShowComments] = useState(show);
-  useEffect(() => {
+  /* useEffect(() => {
     commentLinks.map(id => {
       fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`).
         then(res => res.json()).
@@ -17,7 +17,7 @@ const Comments = ({ commentLinks, show, isFirst, ...props }) => {
     })
 
     
-  }, [])
+  }, []) */
 
 
 
@@ -35,7 +35,7 @@ const Comments = ({ commentLinks, show, isFirst, ...props }) => {
               <p>{comment.by}</p>
               <p>{comment.text}</p>
               {comment.kids != undefined ?
-                <Comments commentLinks={comment.kids} show={false} isFirst={false} /> : ""}
+                <Comments comments={comment.kids} show={false} isFirst={false} /> : ""}
             </div>)
         }
 

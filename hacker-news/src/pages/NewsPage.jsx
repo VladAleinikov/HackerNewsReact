@@ -15,7 +15,7 @@ const NewsPage = () => {
   useEffect(() => {
     dispatch(fetchComments(story));
     console.log(story);
-  }, [])
+  }, [story])
 
   return (
     story === undefined ?
@@ -35,7 +35,7 @@ const NewsPage = () => {
               </span>
               Reload Comments
             </MyButton><br />
-            {/* story.kids != undefined ? <Comments commentLinks={story.kids} show={true} isFirst={true} /> : '' */}
+            {story.kids != undefined ? <Comments comments={story.kids} show={true} isFirst={true} /> : ''}
           </div>}
       </div>
   )
