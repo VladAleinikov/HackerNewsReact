@@ -14,7 +14,7 @@ const NewsPage = () => {
   useEffect(() => {
     dispatch(getStory(params.id));
 
-    //dispatch(fetchComments(story));
+    dispatch(fetchComments(story));
 
   }, [story])
   console.log(story);
