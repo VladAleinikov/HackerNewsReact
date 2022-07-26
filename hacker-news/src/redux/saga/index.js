@@ -3,5 +3,5 @@ import { commentsWatcher } from "./commentsSaga"
 import { newsWatcher } from "./newsSaga"
 
 export function* rootWatcher() {
-      yield all([newsWatcher()/* , commentsWatcher() */])
+      yield all([newsWatcher() , commentsWatcher() ])
 }

@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 const Comments = ({ commentLinks, show, isFirst, ...props }) => {
+
   const [comments, setComments] = useState([]);
   const [showComments, setShowComments] = useState(show);
   useEffect(() => {
@@ -11,8 +12,11 @@ const Comments = ({ commentLinks, show, isFirst, ...props }) => {
         then(res => res.json()).
         then(result => {
           setComments([...comments, result]);
+
         })
     })
+
+    
   }, [])
 
 
@@ -26,7 +30,7 @@ const Comments = ({ commentLinks, show, isFirst, ...props }) => {
         </span>}
 
         {
-          comments.map(comment =>
+          comments.map(comment => 
             <div>
               <p>{comment.by}</p>
               <p>{comment.text}</p>
@@ -35,7 +39,8 @@ const Comments = ({ commentLinks, show, isFirst, ...props }) => {
             </div>)
         }
 
-      </div> : <span onClick={e => setShowComments(true)} className="material-symbols-outlined show-more">
+      </div> :
+      <span onClick={e => setShowComments(true)} className="material-symbols-outlined show-more">
         expand_more
       </span>
   )

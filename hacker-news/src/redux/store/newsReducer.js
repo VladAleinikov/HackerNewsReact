@@ -34,5 +34,5 @@ export default function newsReducer(state = defaultState, action) {
 export const setNews = payload => ({type: SET_NEWS, payload})
 export const getStory = payload => ({ type: GET_STORY, payload })
 export const fetchNews = () => ({ type: FETCH_NEWS })
-export const fetchComments = payload => ({ type: FETCH_COMMENTS, payload });
-export const setStory = payload => ({ typr: SET_STORY, payload });
+export const fetchComments = article => ({ type: FETCH_COMMENTS , payload: article }) ;
+export const setStory = payload => ({ type: SET_STORY, payload });
