@@ -304,6 +304,25 @@ svg rect {
   padding-left: 10px;
 }
 
+.concret-comment {
+  position: relative;
+}
+
+.concret-comment::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(3%, #ff8636), color-stop(70%, #ff8636), color-stop(90%, transparent));
+  background: linear-gradient(90deg, transparent 0%, #ff8636 3%, #ff8636 70%, transparent 90%);
+}
+
+.concret-comment:last-child::after {
+  width: 0;
+}
+
 body.light {
   background: #fff;
 }

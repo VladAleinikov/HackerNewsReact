@@ -21,6 +21,7 @@ const Comments = ({ comments, show, isFirst, ...props }) => {
 
 
 
+
   return (
     showComments ?
       <div className='commentsSection'>
@@ -31,7 +32,7 @@ const Comments = ({ comments, show, isFirst, ...props }) => {
 
         {
           comments.map(comment => 
-            <div>
+            <div className='concret-comment'>
               <p>{comment.by}</p>
               <p>{comment.text}</p>
               {comment.kids != undefined ?

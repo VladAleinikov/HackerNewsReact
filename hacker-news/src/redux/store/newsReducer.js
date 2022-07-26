@@ -17,6 +17,7 @@ export const FETCH_NEWS = "FETCH_NEWS";
 export const SET_NEWS = "SET_NEWS";
 export const FETCH_COMMENTS = "FETCH_COMMENTS";
 export const SET_STORY = "SET_STORY";
+export const FETCH_STORY = "FETCH_STORY";
 
 export default function newsReducer(state = defaultState, action) {
       // eslint-disable-next-line default-case
@@ -36,3 +37,4 @@ export const getStory = payload => ({ type: GET_STORY, payload })
 export const fetchNews = () => ({ type: FETCH_NEWS })
 export const fetchComments = article => ({ type: FETCH_COMMENTS , payload: article }) ;
 export const setStory = payload => ({ type: SET_STORY, payload });
+export const fetchStory = article => ({type: FETCH_STORY, payload: article})
