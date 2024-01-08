@@ -10,12 +10,13 @@ const NewsPage = () => {
   const params = useParams();
   const story = useSelector(state => state.newsReducer.concretStory);
   const dispatch = useDispatch();
-
-  dispatch(fetchStory(params.id));
+  useEffect(() => {
+    dispatch(fetchStory(params.id));
+}, [story])
   useEffect(() => {
     dispatch(fetchComments(story));
     console.log(story);
-  }, [story])
+  }, [story.kids])
 
 
   return (
